@@ -4,7 +4,7 @@ import { ButtonTextBackground } from "@/components/ui/buttonTextBackground";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-3 lg:p-24">
       <div className="flex flex-1">
         <div className="flex flex-col justify-center gap-2">
           <Title size="h1">Hugo</Title>
@@ -12,7 +12,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-1 gap-9 w-full">
+      <div className="flex flex-1 gap-3 lg:gap-9 w-full flex-col lg:flex-row">
         <div className="flex flex-1">
           <ButtonTextBackground
             className="shadow overflow-hidden"
