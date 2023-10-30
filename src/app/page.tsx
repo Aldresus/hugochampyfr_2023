@@ -35,70 +35,68 @@ const projectsVariants: Variants = {
 
 export default function Home() {
   return (
-    <motion.div
+    <motion.main
+      className="flex min-h-screen overflow-hidden flex-col items-center justify-between p-3 lg:p-24"
       variants={parents}
       initial="hidden"
       animate="enter"
-      className="overflow-hidden"
     >
-      <main className="flex min-h-screen flex-col items-center justify-between p-3 lg:p-24">
-        <motion.div
-          variants={titleVariants}
-          transition={{
-            duration: 1,
-          }}
-          className="flex flex-1"
-        >
-          <div className="flex flex-col justify-center gap-2">
-            <Title size="h1">Hugo</Title>
-            <ContactButtons />
-          </div>
-        </motion.div>
-
-        <div className="flex flex-1 gap-3 lg:gap-9 w-full flex-col lg:flex-row">
-          <Link href={"/skills"} className="flex flex-1">
-            <motion.div className="h-full w-full flex" variants={skillsVariant}>
-              <ButtonTextBackground
-                className="shadow overflow-hidden"
-                size="fill"
-                rounded="3xl"
-              >
-                Skills
-              </ButtonTextBackground>
-            </motion.div>
-          </Link>
-
-          <Link href={"/experiences"} className="flex flex-1">
-            <motion.div
-              className="h-full w-full flex"
-              variants={experienceVariants}
-            >
-              <ButtonTextBackground
-                className="shadow overflow-hidden"
-                size="fill"
-                rounded="3xl"
-              >
-                Experiences
-              </ButtonTextBackground>
-            </motion.div>
-          </Link>
-
-          <Link href={"/projects"} className="flex flex-1">
-            <motion.div
-              className="h-full w-full flex"
-              variants={projectsVariants}
-            >
-              <ButtonTextBackground
-                className="shadow overflow-hidden"
-                size="fill"
-                rounded="3xl"
-              >
-                Projects
-              </ButtonTextBackground>
-            </motion.div>
-          </Link>
+      <motion.div
+        variants={titleVariants}
+        transition={{
+          duration: 1,
+        }}
+        className="flex flex-1"
+      >
+        <div className="flex flex-col justify-center gap-2">
+          <Title size="h1">Hugo</Title>
+          <ContactButtons />
         </div>
-      </main>
-    </motion.div>
+      </motion.div>
+
+      <div className="flex flex-1 gap-3 lg:gap-9 w-full flex-col lg:flex-row">
+        <Link href={"/skills"} className="flex flex-1">
+          <motion.div className="h-full w-full flex" variants={skillsVariant}>
+            <ButtonTextBackground
+              className="shadow overflow-hidden"
+              size="fill"
+              rounded="3xl"
+            >
+              Skills
+            </ButtonTextBackground>
+          </motion.div>
+        </Link>
+
+        <Link href={"/experiences"} className="flex flex-1">
+          <motion.div
+            className="h-full w-full flex"
+            variants={experienceVariants}
+          >
+            <ButtonTextBackground
+              className="shadow overflow-hidden"
+              size="fill"
+              rounded="3xl"
+            >
+              Experiences
+            </ButtonTextBackground>
+          </motion.div>
+        </Link>
+
+        <Link href={"/projects"} className="flex flex-1">
+          <motion.div
+            className="h-full w-full flex"
+            variants={projectsVariants}
+          >
+            <ButtonTextBackground
+              className="shadow overflow-hidden"
+              size="fill"
+              rounded="3xl"
+            >
+              Projects
+            </ButtonTextBackground>
+          </motion.div>
+        </Link>
+      </div>
+    </motion.main>
   );
 }
