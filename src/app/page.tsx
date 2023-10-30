@@ -57,6 +57,7 @@ export default function Home() {
       <div className="flex flex-1 gap-3 lg:gap-9 w-full flex-col lg:flex-row">
         <Link href={"/skills"} className="flex flex-1">
           <motion.div className="h-full w-full flex" variants={skillsVariant}>
+          <motion.div className="w-full flex" variants={skillsVariant}>
             <ButtonTextBackground
               className="shadow overflow-hidden"
               size="fill"
@@ -72,6 +73,7 @@ export default function Home() {
             className="h-full w-full flex"
             variants={experienceVariants}
           >
+          <motion.div className="w-full flex" variants={experienceVariants}>
             <ButtonTextBackground
               className="shadow overflow-hidden"
               size="fill"
@@ -87,6 +89,7 @@ export default function Home() {
             className="h-full w-full flex"
             variants={projectsVariants}
           >
+          <motion.div className="w-full flex" variants={projectsVariants}>
             <ButtonTextBackground
               className="shadow overflow-hidden"
               size="fill"
