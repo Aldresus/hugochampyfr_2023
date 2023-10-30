@@ -1,6 +1,7 @@
 import Title from "@/components/ui/title";
 import ContactButtons from "@/components/ui/contactButtons";
 import { ButtonTextBackground } from "@/components/ui/buttonTextBackground";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -42,5 +43,11 @@ export default function Home() {
         </div>
       </div>
     </main>
+          <Link href={"/skills"} className="flex flex-1">
+          </Link>
+          <Link href={"/experiences"} className="flex flex-1">
+          </Link>
+          <Link href={"/projects"} className="flex flex-1">
+          </Link>
   );
 }
