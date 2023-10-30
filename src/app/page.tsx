@@ -3,18 +3,18 @@ import Title from "@/components/ui/title";
 import ContactButtons from "@/components/ui/contactButtons";
 import { ButtonTextBackground } from "@/components/ui/buttonTextBackground";
 import Link from "next/link";
-import { motion, MotionProps, Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const parents: Variants = {
   hidden: { opacity: 0 },
   enter: {
     opacity: 1,
-    transition: { staggerChildren: 0.3 },
+    transition: { staggerChildren: 0.6 },
   },
 };
 
 const titleVariants: Variants = {
-  hidden: { opacity: 0, x: 0, y: -100 },
+  hidden: { opacity: 0, x: 0, y: -200, transition: { ease: "easeInOut" } },
   enter: { opacity: 1, x: 0, y: 0 },
 };
 
@@ -42,7 +42,13 @@ export default function Home() {
       className="overflow-hidden"
     >
       <main className="flex min-h-screen flex-col items-center justify-between p-3 lg:p-24">
-        <motion.div variants={titleVariants} className="flex flex-1">
+        <motion.div
+          variants={titleVariants}
+          transition={{
+            duration: 1,
+          }}
+          className="flex flex-1"
+        >
           <div className="flex flex-col justify-center gap-2">
             <Title size="h1">Hugo</Title>
             <ContactButtons />
