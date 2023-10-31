@@ -3,7 +3,8 @@ import Title from "@/components/ui/title";
 import ContactButtons from "@/components/ui/contactButtons";
 import { ButtonTextBackground } from "@/components/ui/buttonTextBackground";
 import Link from "next/link";
-import { motion, Variants } from "framer-motion";
+import { Variants } from "framer-motion";
+const { motion } = require("framer-motion");
 
 const parents: Variants = {
   hidden: { opacity: 0 },
