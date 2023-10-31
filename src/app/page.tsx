@@ -3,8 +3,7 @@ import Title from "@/components/ui/title";
 import ContactButtons from "@/components/ui/contactButtons";
 import { ButtonTextBackground } from "@/components/ui/buttonTextBackground";
 import Link from "next/link";
-import { Variants } from "framer-motion";
-const { motion } = require("framer-motion");
+import { motion, Variants } from "framer-motion";
 
 const parents: Variants = {
   hidden: { opacity: 0 },
@@ -56,8 +55,7 @@ export default function Home() {
       </motion.div>
 
       <div className="flex flex-1 gap-3 lg:gap-9 w-full flex-col lg:flex-row">
-        <Link href={"/skills"} className="flex flex-1">
-          <motion.div className="h-full w-full flex" variants={skillsVariant}>
+        <Link href={"/resume/skills"} className="flex flex-1">
           <motion.div className="w-full flex" variants={skillsVariant}>
             <ButtonTextBackground
               className="shadow overflow-hidden"
@@ -69,11 +67,7 @@ export default function Home() {
           </motion.div>
         </Link>
 
-        <Link href={"/experiences"} className="flex flex-1">
-          <motion.div
-            className="h-full w-full flex"
-            variants={experienceVariants}
-          >
+        <Link href={"/resume/experiences"} className="flex flex-1">
           <motion.div className="w-full flex" variants={experienceVariants}>
             <ButtonTextBackground
               className="shadow overflow-hidden"
@@ -85,11 +79,7 @@ export default function Home() {
           </motion.div>
         </Link>
 
-        <Link href={"/projects"} className="flex flex-1">
-          <motion.div
-            className="h-full w-full flex"
-            variants={projectsVariants}
-          >
+        <Link href={"/resume/projects"} className="flex flex-1">
           <motion.div className="w-full flex" variants={projectsVariants}>
             <ButtonTextBackground
               className="shadow overflow-hidden"
