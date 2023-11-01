@@ -1,8 +1,8 @@
-"use client";
 import ContentLayout from "@/components/layouts/contentLayout";
 import experiences from "@/data/experiences";
 import React from "react";
-import ExperienceCard from "@/components/experienceCard";
+import ExperienceCard from "@/components/experienceCard/experienceCard";
+
 export default function ExperiencesPages() {
   return (
     <ContentLayout
@@ -12,11 +12,11 @@ export default function ExperiencesPages() {
       {experiences.map((experience) => (
         <div
           key={`${experience.name}${experience.place}`}
-          className="w-full flex items-center justify-center pt-72 h-[calc(100vh-1.5rem)] lg:h-[calc(100vh-12rem)] snap-always  snap-center"
+          className="w-full flex items-center justify-center pt-32 lg:h-[calc(100vh-8rem)] lg:snap-always lg:snap-center"
         >
           <ExperienceCard
             {...experience}
-            className="w-full lg:w-1/3 lg:aspect-square"
+            className="w-full lg:w-5/12 lg:aspect-square"
           />
         </div>
       ))}
