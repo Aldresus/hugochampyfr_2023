@@ -44,7 +44,7 @@ const buttonVariants = cva(
   },
 );
 
-const containerVariants = cva("flex flex-1 overflow-hidden", {
+const containerVariants = cva("flex flex-1 overflow-hidden h-full", {
   variants: {
     variant: {
       default: "bg-primary shadow hover:bg-primary/90",
@@ -54,9 +54,21 @@ const containerVariants = cva("flex flex-1 overflow-hidden", {
       ghost: "hover:bg-accent ",
       link: "underline-offset-4 hover:underline",
     },
+    rounded: {
+      xs: "rounded-xs",
+      sm: "rounded-sm",
+      md: "rounded-md",
+      lg: "rounded-lg",
+      xl: "rounded-xl",
+      "2xl": "rounded-2xl",
+      "3xl": "rounded-3xl",
+      full: "rounded-full",
+      none: "rounded-none",
+    },
   },
   defaultVariants: {
     variant: "default",
+    rounded: "md",
   },
 });
 
@@ -73,7 +85,7 @@ const ButtonTextBackground = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const Comp = asChild ? Slot : "button";
     return (
-      <div className={cn(containerVariants({ variant, className }))}>
+      <div className={cn(containerVariants({ variant, className, rounded }))}>
         <div className="relative w-0 h-0 ">
           <div className="absolute select-none top-[-23rem] left-[-12rem] text-[40rem] z-0 text-foreground font-bold tracking-[-3rem] drag-none">
             {children}
