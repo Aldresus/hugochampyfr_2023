@@ -2,15 +2,59 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 import Title from "@/components/ui/title";
+import { cva } from "class-variance-authority";
+
+const cardVariants = cva("border shadow", {
+  variants: {
+    rounded: {
+      xs: "rounded-xs",
+      sm: "rounded-sm",
+      md: "rounded-md",
+      lg: "rounded-lg",
+      xl: "rounded-xl",
+      full: "rounded-full",
+      none: "rounded-none",
+      left: "rounded-l-xl",
+      right: "rounded-r-xl",
+      top: "rounded-t-xl",
+      bottom: "rounded-b-xl",
+    },
+    variant: {
+      default: "bg-card text-card-foreground",
+      primary: "bg-primary text-primary-foreground",
+      secondary: "bg-secondary text-secondary-foreground",
+    },
+  },
+  defaultVariants: {
+    rounded: "xl",
+    variant: "default",
+  },
+});
+
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+  rounded?:
+    | "xs"
+    | "sm"
+    | "md"
+    | "lg"
+    | "xl"
+    | "full"
+    | "none"
+    | "left"
+    | "right"
+    | "top"
+    | "bottom";
+  variant?: "default" | "primary" | "secondary";
+}
 
 const Card = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
+  React.HTMLAttributes<HTMLDivElement> & CardProps
+>(({ className, rounded, variant, ...props }, ref) => (
   <div
     ref={ref}
     className={cn(
-      "rounded-xl border bg-card text-card-foreground shadow",
+      cardVariants({ rounded: rounded, className, variant }),
       className,
     )}
     {...props}
