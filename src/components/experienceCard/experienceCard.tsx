@@ -9,11 +9,11 @@ import {
 import { cn } from "@/lib/utils";
 import { Experience } from "@/data/experiences";
 import { ButtonTextBackground } from "@/components/ui/buttonTextBackground";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SkillsSideCard from "@/components/experienceCard/skillsSideCard";
 import OutcomesSideCard from "@/components/experienceCard/outcomesSideCard";
 import { clsx } from "clsx";
-import { Variants, motion } from "framer-motion";
+import { Variants, motion, useInView } from "framer-motion";
 
 interface ExperienceCardProps extends Experience {
   className?: string;
@@ -23,6 +23,14 @@ export default function ExperienceCard(props: ExperienceCardProps) {
   const { date, name, outcome, place, desc, technologies, className } = props;
 
   const [moreInfo, setMoreInfo] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setMoreInfo(isInView);
+    }, 200);
+  }, [isInView]);
 
   const technologiesVariants: Variants = {
     closed: {
@@ -45,6 +53,17 @@ export default function ExperienceCard(props: ExperienceCardProps) {
     },
   };
 
+  const mobileVariants: Variants = {
+    closed: {
+      opacity: 0,
+      height: 0,
+    },
+    open: {
+      opacity: 1,
+      height: "auto",
+    },
+  };
+
   return (
     <div className="flex flex-wrap justify-center items-center w-full h-full">
       <motion.div
@@ -61,7 +80,7 @@ export default function ExperienceCard(props: ExperienceCardProps) {
           className="h-full"
         />
       </motion.div>
-      <Card className={cn("flex flex-col z-10", className)}>
+      <Card ref={ref} className={cn("flex flex-col z-10", className)}>
         <CardHeader>
           <CardTitle>{name}</CardTitle>
           <div className="flex items-center space-x-2">
@@ -75,27 +94,35 @@ export default function ExperienceCard(props: ExperienceCardProps) {
           </div>
         </CardHeader>
         <CardContent className="flex-1">{desc}</CardContent>
-        <CardFooter className="flex justify-end h-1/3">
-          <ButtonTextBackground
-            onClick={() => setMoreInfo(!moreInfo)}
-            size="fill"
-            className="flex-1"
-          >
-            {moreInfo ? "Less info" : "More info"}
-          </ButtonTextBackground>
-        </CardFooter>
-        <CardContent
-          className="flex-1  lg:hidden"
-          hidden={!moreInfo && !outcome}
+        {/*<CardFooter className="flex justify-end h-1/3">*/}
+        {/*  <ButtonTextBackground*/}
+        {/*    onClick={() => setMoreInfo(!moreInfo)}*/}
+        {/*    size="fill"*/}
+        {/*    className="flex-1"*/}
+        {/*  >*/}
+        {/*    {moreInfo ? "Less info" : "More info"}*/}
+        {/*  </ButtonTextBackground>*/}
+        {/*</CardFooter>*/}
+        <motion.div
+          variants={mobileVariants}
+          hidden={!outcome}
+          animate={moreInfo ? "open" : "closed"}
+          transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
         >
-          <OutcomesSideCard outcome={outcome} rounded={"top"} />
-        </CardContent>
-        <CardContent
-          className="flex-1  lg:hidden"
-          hidden={!moreInfo && !technologies}
+          <CardContent className="flex-1 lg:hidden">
+            <OutcomesSideCard outcome={outcome} rounded={"top"} />
+          </CardContent>
+        </motion.div>
+        <motion.div
+          variants={mobileVariants}
+          animate={moreInfo ? "open" : "closed"}
+          hidden={!technologies}
+          transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
         >
-          <SkillsSideCard technologies={technologies} rounded={"bottom"} />
-        </CardContent>
+          <CardContent className="flex-1 lg:hidden">
+            <SkillsSideCard technologies={technologies} rounded={"bottom"} />
+          </CardContent>
+        </motion.div>
       </Card>
 
       <motion.div
