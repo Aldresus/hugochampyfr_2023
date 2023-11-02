@@ -27,6 +27,7 @@ export default function ExperienceCard(props: ExperienceCardProps) {
   const isInView = useInView(ref);
 
   useEffect(() => {
+    if (!isInView) return;
     setTimeout(() => {
       setMoreInfo(isInView);
     }, 200);
@@ -94,7 +95,7 @@ export default function ExperienceCard(props: ExperienceCardProps) {
           </div>
         </CardHeader>
         <CardContent className="flex-1">{desc}</CardContent>
-        {/*<CardFooter className="flex justify-end h-1/3">*/}
+        {/*<CardFooter className="flex justify-end h-1/3 lg:hidden">*/}
         {/*  <ButtonTextBackground*/}
         {/*    onClick={() => setMoreInfo(!moreInfo)}*/}
         {/*    size="fill"*/}
@@ -109,7 +110,7 @@ export default function ExperienceCard(props: ExperienceCardProps) {
           animate={moreInfo ? "open" : "closed"}
           transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
         >
-          <CardContent className="flex-1 lg:hidden">
+          <CardContent className="flex-1 lg:hidden" hidden={!outcome}>
             <OutcomesSideCard outcome={outcome} rounded={"top"} />
           </CardContent>
         </motion.div>
@@ -119,7 +120,7 @@ export default function ExperienceCard(props: ExperienceCardProps) {
           hidden={!technologies}
           transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
         >
-          <CardContent className="flex-1 lg:hidden">
+          <CardContent className="flex-1 lg:hidden" hidden={!technologies}>
             <SkillsSideCard technologies={technologies} rounded={"bottom"} />
           </CardContent>
         </motion.div>
