@@ -85,13 +85,18 @@ export default function ExperienceCard(props: ExperienceCardProps) {
         <CardHeader>
           <CardTitle>{name}</CardTitle>
           <div className="flex items-center space-x-2">
-            <span className="lg:text-lg font-medium" hidden={!place}>
+            <span
+              className="lg:text-lg text-gray-500 font-medium"
+              hidden={!place}
+            >
               {place}
             </span>
             <span className="lg:text-lg text-gray-500" hidden={!place}>
               |
             </span>
-            <span className="lg:text-lg text-gray-500">{date}</span>
+            <span className="lg:text-lg text-gray-500 whitespace-nowrap">
+              {date}
+            </span>
           </div>
         </CardHeader>
         <CardContent className="flex-1">{desc}</CardContent>
@@ -111,7 +116,10 @@ export default function ExperienceCard(props: ExperienceCardProps) {
           transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
         >
           <CardContent className="flex-1 lg:hidden" hidden={!outcome}>
-            <OutcomesSideCard outcome={outcome} rounded={"top"} />
+            <OutcomesSideCard
+              outcome={outcome}
+              rounded={!!technologies ? "top" : undefined}
+            />
           </CardContent>
         </motion.div>
         <motion.div
@@ -121,7 +129,10 @@ export default function ExperienceCard(props: ExperienceCardProps) {
           transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
         >
           <CardContent className="flex-1 lg:hidden" hidden={!technologies}>
-            <SkillsSideCard technologies={technologies} rounded={"bottom"} />
+            <SkillsSideCard
+              technologies={technologies}
+              rounded={!!outcome ? "bottom" : undefined}
+            />
           </CardContent>
         </motion.div>
       </Card>
