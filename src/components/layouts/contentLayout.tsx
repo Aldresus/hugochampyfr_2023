@@ -39,7 +39,7 @@ export default function ContentLayout(props: ContentProps) {
 
   return (
     <motion.div
-      className="flex min-h-screen flex-col gap-9 items-center justify-between p-3 lg:p-24"
+      className="flex flex-col gap-9 items-center justify-between p-3 lg:p-24"
       variants={parents}
       initial="hidden"
       animate="enter"

@@ -7,7 +7,7 @@ export default function ExperiencesPages() {
   return (
     <ContentLayout
       title="Experiences"
-      contentClassName="flex-col items-center justify-center gap-10 h-full"
+      contentClassName="flex-col items-center justify-center gap-10"
     >
       {experiences.map((experience) => (
         <div
