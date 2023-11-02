@@ -66,7 +66,7 @@ const experiences: Experience[] = [
     technologies: [
       "project management",
       "Python",
-      "Oriented Object Programming",
+      "OOP",
       "C",
       "C++",
       "SQL",

@@ -13,11 +13,11 @@ const titleVariants = cva(
   {
     variants: {
       size: {
-        h1: "text-4xl lg:text-6xl",
-        h2: "text-2xl lg:text-3xl",
-        h3: "text-xl lg:text-2xl",
-        h4: "text-lg lg:text-xl",
-        h5: "text-md lg:text-lg",
+        h1: "text-4xl 2xl:text-6xl",
+        h2: "text-2xl 2xl:text-3xl",
+        h3: "text-xl 2xl:text-2xl",
+        h4: "text-lg 2xl:text-xl",
+        h5: "text-md 2xl:text-lg",
       },
     },
     defaultVariants: {

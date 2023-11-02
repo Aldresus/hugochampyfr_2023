@@ -14,7 +14,7 @@ export default function SkillsSideCard(props: ExperienceCardSideProps) {
         <CardTitle size="h4">Acquired skills:</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col gap-3 ">
-        <ul className="list-disc list-inside space-y-2 text-sm">
+        <ul className="list-disc list-inside space-y-[0.250rem] text-sm">
           {technologies?.map((technology) => (
             <li key={technology}>{capitalize(technology)}</li>
           ))}
