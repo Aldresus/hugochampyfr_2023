@@ -10,7 +10,7 @@ export default function OutcomesSideCard(props: ExperienceCardSideProps) {
   return (
     <Card variant="secondary" {...props}>
       <CardHeader>
-        <CardTitle>Outcomes:</CardTitle>
+        <CardTitle size="h4">Outcomes:</CardTitle>
       </CardHeader>
       <CardContent>{outcome}</CardContent>
     </Card>

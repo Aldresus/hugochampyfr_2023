@@ -30,7 +30,7 @@ export default function ExperienceCard(props: ExperienceCardProps) {
     if (!isInView) return;
     setTimeout(() => {
       setMoreInfo(isInView);
-    }, 200);
+    }, 100);
   }, [isInView]);
 
   const technologiesVariants: Variants = {
@@ -83,7 +83,7 @@ export default function ExperienceCard(props: ExperienceCardProps) {
       </motion.div>
       <Card ref={ref} className={cn("flex flex-col z-10", className)}>
         <CardHeader>
-          <CardTitle>{name}</CardTitle>
+          <CardTitle size="h3">{name}</CardTitle>
           <div className="flex items-center space-x-2">
             <span
               className="lg:text-lg text-gray-500 font-medium"

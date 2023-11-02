@@ -11,7 +11,7 @@ export default function SkillsSideCard(props: ExperienceCardSideProps) {
   return (
     <Card variant="secondary" {...props}>
       <CardHeader>
-        <CardTitle>Acquired skills:</CardTitle>
+        <CardTitle size="h4">Acquired skills:</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col gap-3 ">
         <ul className="list-disc list-inside space-y-2 text-sm">

@@ -36,7 +36,7 @@ const projectsVariants: Variants = {
 export default function Home() {
   return (
     <motion.main
-      className="flex min-h-screen overflow-hidden flex-col items-center justify-between p-3 lg:p-24"
+      className="flex  h-full overflow-hidden flex-col items-center justify-between p-3 lg:p-24"
       variants={parents}
       initial="hidden"
       animate="enter"
@@ -46,15 +46,17 @@ export default function Home() {
         transition={{
           duration: 1,
         }}
-        className="flex flex-1"
+        className="flex h-1/3 lg:h-1/2"
       >
         <div className="flex flex-col justify-center gap-2">
-          <Title size="h1">Hugo</Title>
+          <Title size="h1" className="justify-center">
+            Hugo
+          </Title>
           <ContactButtons />
         </div>
       </motion.div>
 
-      <div className="flex flex-1 gap-3 lg:gap-9 w-full flex-col lg:flex-row">
+      <div className="flex h-2/3 lg:h-1/2 gap-3 lg:gap-9 w-full flex-col lg:flex-row">
         <Link href={"/resume/skills"} className="flex flex-1">
           <motion.div className="w-full flex" variants={skillsVariant}>
             <ButtonTextBackground

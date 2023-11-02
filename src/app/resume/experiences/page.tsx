@@ -12,7 +12,7 @@ export default function ExperiencesPages() {
       {experiences.map((experience) => (
         <div
           key={`${experience.name}${experience.place}`}
-          className="w-full flex items-center justify-center pt-32 lg:h-[calc(100vh-8rem)] lg:snap-always lg:snap-center"
+          className="w-full flex items-center justify-center pt-36 lg:h-[calc(100vh-8rem)] lg:snap-always lg:snap-center"
         >
           <ExperienceCard
             {...experience}
