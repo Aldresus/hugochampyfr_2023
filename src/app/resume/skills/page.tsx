@@ -17,7 +17,7 @@ export default function SkillsPage() {
           className="flex flex-col gap-9 w-full pt-40 lg:h-[calc(100vh-8rem)] lg:snap-always lg:snap-center"
         >
           <Title size="h3">{capitalize(group)}</Title>
-          <div className="w-full h-full grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="w-full h-full grid gap-9 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {groupedSkills[group].map((skill) => (
               <div key={skill.name}>
                 <SkillCard skill={skill.name} icon={skill.icon} />

@@ -36,8 +36,8 @@ interface SkillCardProps extends React.HTMLAttributes<HTMLDivElement> {
   icon: string;
 }
 
-const fillClasses = "h-20 fill-accent-foreground";
-const strokeClasses = "h-20 stroke-accent-foreground";
+const fillClasses = "h-10 lg:h-16 xl:h-20 fill-accent-foreground";
+const strokeClasses = "h-10 lg:h-16 xl:h-20 stroke-accent-foreground";
 const icons = {
   "devicon-c": <IconC className={fillClasses} />,
   "devicon-py": <IconPy className={fillClasses} />,
@@ -82,7 +82,7 @@ export default function SkillCard({ skill, ...props }: SkillCardProps) {
       {...props}
     >
       {Comp}
-      <h3 className="font-semibold">{skill}</h3>
+      <h3 className="font-semibold ">{skill}</h3>
     </div>
   );
 }
