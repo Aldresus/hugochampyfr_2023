@@ -1,14 +1,7 @@
 "use client";
-import {
-  CardTitle,
-  CardHeader,
-  CardContent,
-  Card,
-  CardFooter,
-} from "@/components/ui/card";
+import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { Experience } from "@/data/experiences";
-import { ButtonTextBackground } from "@/components/ui/buttonTextBackground";
 import { useEffect, useRef, useState } from "react";
 import SkillsSideCard from "@/components/experienceCard/skillsSideCard";
 import OutcomesSideCard from "@/components/experienceCard/outcomesSideCard";
@@ -84,22 +77,17 @@ export default function ExperienceCard(props: ExperienceCardProps) {
       <Card ref={ref} className={cn("flex flex-col z-10", className)}>
         <CardHeader>
           <CardTitle size="h3">{name}</CardTitle>
-          <div className="flex items-center space-x-2">
-            <span
-              className="lg:text-lg text-gray-500 font-medium"
-              hidden={!place}
-            >
+          <div className="flex items-center space-x-2 text-foreground/50">
+            <span className="lg:text-lg font-medium" hidden={!place}>
               {place}
             </span>
-            <span className="lg:text-lg text-gray-500" hidden={!place}>
+            <span className="lg:text-lg" hidden={!place}>
               |
             </span>
-            <span className="lg:text-lg text-gray-500 whitespace-nowrap">
-              {date}
-            </span>
+            <span className="lg:text-lg whitespace-nowrap">{date}</span>
           </div>
         </CardHeader>
-        <CardContent className="flex-1">{desc}</CardContent>
+        <CardContent className="flex-1 text-foreground/80">{desc}</CardContent>
         {/*<CardFooter className="flex justify-end h-1/3 lg:hidden">*/}
         {/*  <ButtonTextBackground*/}
         {/*    onClick={() => setMoreInfo(!moreInfo)}*/}

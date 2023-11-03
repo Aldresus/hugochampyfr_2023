@@ -50,7 +50,7 @@ export default function ContentLayout(props: ContentProps) {
         transition={{
           duration: 1,
         }}
-        className="fixed flex justify-center left-0 right-0 z-50 top-0 p-9 lg:pt-24 pb-9 bg-white"
+        className="fixed flex justify-center left-0 right-0 z-50 top-0 p-9 lg:pt-24 pb-9 bg-background"
       >
         <div className="flex flex-col justify-center gap-2 h-[10vh]">
           <div>

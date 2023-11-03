@@ -9,7 +9,7 @@ interface TitleProps {
 }
 
 const titleVariants = cva(
-  "text-4xl flex content-center flex-wrap font-bold text-gray-800",
+  "text-4xl flex content-center flex-wrap font-bold text-foreground",
   {
     variants: {
       size: {
