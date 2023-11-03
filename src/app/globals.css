@@ -15,7 +15,7 @@
  
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
- 
+
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
  
@@ -24,6 +24,7 @@
  
     --accent: 240, 100%, 99%;
     --accent-foreground: 211, 95%, 63%;
+    --accent-temp: 240, 100%, 99%;
  
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
