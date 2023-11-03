@@ -7,7 +7,7 @@ export interface Skill {
 
 let skills: Skill[] = [
   {
-    name: "HTML / CSS",
+    name: "HTML / CSS / JS",
     type: "technologies",
     icon: "devicon-html",
   },
@@ -15,11 +15,6 @@ let skills: Skill[] = [
     name: "Python",
     type: "technologies",
     icon: "devicon-py",
-  },
-  {
-    name: "JS / TS",
-    type: "technologies",
-    icon: "devicon-ts",
   },
   {
     name: "Java",
@@ -39,24 +34,9 @@ let skills: Skill[] = [
     icon: "devicon-c",
   },
   {
-    name: "Fusion 360",
-    type: "softwares",
-    icon: "devicon-fusion360",
-  },
-  {
     name: "Networking basics",
     type: "technologies",
     icon: "devicon-putty",
-  },
-  {
-    name: "CAD",
-    type: "technologies",
-    icon: "devicon-cad",
-  },
-  {
-    name: "3D printing",
-    type: "technologies",
-    icon: "devicon-3dprinter",
   },
   {
     name: "Git",
@@ -168,6 +148,16 @@ let skills: Skill[] = [
     type: "technologies",
     icon: "devicon-angular",
   },
+  {
+    name: "Nodejs",
+    type: "technologies",
+    icon: "devicon-nodejs",
+  },
+  {
+    name: "Nestjs",
+    type: "technologies",
+    icon: "devicon-nestjs",
+  },
 ];
 
 export function groupSkillsByType(skills: Skill[]) {
@@ -182,4 +172,6 @@ export function groupSkillsByType(skills: Skill[]) {
   return groupedSkills;
 }
 
-export default skills;
+export default skills.sort((a, b) =>
+  a.name.toLowerCase().localeCompare(b.name.toLowerCase()),
+);

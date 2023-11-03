@@ -5,8 +5,8 @@ export default function IconFrench(props: IconProps) {
   return (
     <svg
       className={className}
-      height="128px"
-      width="128px"
+      height="128"
+      width="128"
       version="1.1"
       id="Capa_1"
       xmlns="http://www.w3.org/2000/svg"

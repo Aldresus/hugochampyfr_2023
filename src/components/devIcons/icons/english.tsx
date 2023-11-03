@@ -2,7 +2,7 @@ import IconProps from "@/components/devIcons/iconProps";
 
 export default function IconEnglish(props: IconProps) {
   return (
-    <svg width="128px" height="128px" viewBox="0 0 24 24" {...props}>
+    <svg width="128" height="128" viewBox="0 0 24 24" {...props}>
       <g id="SVGRepo_iconCarrier">
         <path
           fillRule="evenodd"

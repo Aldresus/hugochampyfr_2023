@@ -19,34 +19,57 @@ import IconEnglish from "@/components/devIcons/icons/english";
 import IconReact from "@/components/devIcons/icons/react";
 import IconAngular from "@/components/devIcons/icons/angular";
 import IconNextjs from "@/components/devIcons/icons/nextjs";
+import IconOffice from "@/components/devIcons/icons/office";
+import IconFlexibility from "@/components/devIcons/icons/flexibility";
+import IconAutonomy from "@/components/devIcons/icons/autonomy";
+import IconProblem from "@/components/devIcons/icons/problem";
+import IconProject from "@/components/devIcons/icons/project";
+import IconTeam from "@/components/devIcons/icons/team";
+import IconAdaptability from "@/components/devIcons/icons/adaptability";
+import IconCommunication from "@/components/devIcons/icons/communication";
+import IconCuriosity from "@/components/devIcons/icons/curiosity";
+import IconNestjs from "@/components/devIcons/icons/nestjs";
+import IconNodejs from "@/components/devIcons/icons/nodejs";
 
 interface SkillCardProps extends React.HTMLAttributes<HTMLDivElement> {
   skill: string;
   icon: string;
 }
 
-const classes = "h-20 fill-accent-foreground";
+const fillClasses = "h-20 fill-accent-foreground";
+const strokeClasses = "h-20 stroke-accent-foreground";
 const icons = {
-  "devicon-c": <IconC className={classes} />,
-  "devicon-py": <IconPy className={classes} />,
-  "devicon-ts": <IconTS className={classes} />,
-  "devicon-html": <IconHTML className={classes} />,
-  "devicon-git": <IconGit className={classes} />,
-  "devicon-java": <IconJava className={classes} />,
-  "devicon-sql": <IconSQL className={classes} />,
-  "devicon-putty": <IconPutty className={classes} />,
-  "devicon-photoshop": <IconPhotoshop className={classes} />,
-  "devicon-vs": <IconVS className={classes} />,
-  "devicon-jetbrains": <IconJetbrains className={classes} />,
-  "devicon-jira": <IconJira className={classes} />,
-  "devicon-figma": <IconFigma className={classes} />,
-  "devicon-github": <IconGithub className={classes} />,
-  "devicon-linux": <IconLinux className={classes} />,
-  "devicon-french": <IconFrench className={classes} />,
-  "devicon-english": <IconEnglish className={classes} />,
-  "devicon-react": <IconReact className={classes} />,
-  "devicon-nextjs": <IconNextjs className={classes} />,
-  "devicon-angular": <IconAngular className={classes} />,
+  "devicon-c": <IconC className={fillClasses} />,
+  "devicon-py": <IconPy className={fillClasses} />,
+  "devicon-ts": <IconTS className={fillClasses} />,
+  "devicon-html": <IconHTML className={fillClasses} />,
+  "devicon-git": <IconGit className={fillClasses} />,
+  "devicon-java": <IconJava className={fillClasses} />,
+  "devicon-sql": <IconSQL className={fillClasses} />,
+  "devicon-putty": <IconPutty className={fillClasses} />,
+  "devicon-photoshop": <IconPhotoshop className={fillClasses} />,
+  "devicon-vs": <IconVS className={fillClasses} />,
+  "devicon-jetbrains": <IconJetbrains className={fillClasses} />,
+  "devicon-jira": <IconJira className={fillClasses} />,
+  "devicon-figma": <IconFigma className={fillClasses} />,
+  "devicon-github": <IconGithub className={fillClasses} />,
+  "devicon-linux": <IconLinux className={fillClasses} />,
+  "devicon-french": <IconFrench className={fillClasses} />,
+  "devicon-english": <IconEnglish className={fillClasses} />,
+  "devicon-react": <IconReact className={fillClasses} />,
+  "devicon-nextjs": <IconNextjs className={fillClasses} />,
+  "devicon-angular": <IconAngular className={fillClasses} />,
+  "devicon-office": <IconOffice className={fillClasses} />,
+  "devicon-flexibility": <IconFlexibility className={strokeClasses} />,
+  "devicon-autonomy": <IconAutonomy className={strokeClasses} />,
+  "devicon-problem": <IconProblem className={strokeClasses} />,
+  "devicon-project": <IconProject className={strokeClasses} />,
+  "devicon-teamwork": <IconTeam className={strokeClasses} />,
+  "devicon-adaptability": <IconAdaptability className={strokeClasses} />,
+  "devicon-communication": <IconCommunication className={strokeClasses} />,
+  "devicon-curiosity": <IconCuriosity className={strokeClasses} />,
+  "devicon-nestjs": <IconNestjs className={fillClasses} />,
+  "devicon-nodejs": <IconNodejs className={fillClasses} />,
 };
 
 export default function SkillCard({ skill, ...props }: SkillCardProps) {
