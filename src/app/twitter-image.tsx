@@ -43,8 +43,8 @@ export default async function Image() {
           Hugo
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
+            width="3rem"
+            height="3rem"
             viewBox="0 0 24 24"
             fill="none"
             stroke="#479efa"
