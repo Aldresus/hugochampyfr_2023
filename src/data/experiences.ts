@@ -88,4 +88,11 @@ const experiences: Experience[] = [
   },
 ];
 
+//sort experiences beginning with the most recent
+experiences.sort((a, b) => {
+  const dateA = new Date(a.date);
+  const dateB = new Date(b.date);
+  return dateB.getTime() - dateA.getTime();
+});
+
 export default experiences;
