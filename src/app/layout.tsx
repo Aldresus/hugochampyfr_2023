@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   description: "Hugo Champy's personal website",
   keywords:
     "Hugo Champy, Hugo, Champy, HugoChampy, Hugo Champy's personal website",
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
