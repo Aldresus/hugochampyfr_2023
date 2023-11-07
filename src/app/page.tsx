@@ -164,7 +164,7 @@ export default function Home() {
             >
               <Sparkles
                 onClick={() => setTitleRotation(titleRotation + 360)}
-                className="text-accent-foreground"
+                className="text-accent-foreground cursor-pointer"
                 size="30"
               />
             </motion.div>

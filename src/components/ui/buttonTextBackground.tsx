@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
@@ -83,13 +83,34 @@ const ButtonTextBackground = React.forwardRef<HTMLButtonElement, ButtonProps>(
     { className, variant, rounded, children, size, asChild = false, ...props },
     ref,
   ) => {
+    const [isHovered, setIsHovered] = React.useState(false);
+
+    const hoverVariants = {
+      initial: {
+        translateX: "0%",
+        transition: { duration: 0.01 },
+      },
+      hover: {
+        translateX: "-100%",
+        transition: { duration: 70 },
+      },
+    };
+
     const Comp = asChild ? Slot : "button";
     return (
-      <div className={cn(containerVariants({ variant, className, rounded }))}>
+      <motion.div
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
+        className={cn(containerVariants({ variant, className, rounded }))}
+      >
         <div className="relative w-0 h-0 ">
-          <div className="absolute select-none top-[-23rem] left-[-12rem] text-[40rem] z-0 text-foreground font-bold tracking-[-3rem] drag-none">
+          <motion.div
+            variants={hoverVariants}
+            animate={isHovered ? "hover" : "initial"}
+            className="absolute select-none top-[-23rem] left-[-12rem] text-[30rem] 2xl:text-[50rem]  xl:text-[40rem] z-0 text-foreground font-bold tracking-[-3rem] drag-none"
+          >
             {children}
-          </div>
+          </motion.div>
         </div>
         <Comp
           className={cn(buttonVariants({ variant, size, rounded, className }))}
@@ -98,7 +119,7 @@ const ButtonTextBackground = React.forwardRef<HTMLButtonElement, ButtonProps>(
         >
           {children}
         </Comp>
-      </div>
+      </motion.div>
     );
   },
 );
