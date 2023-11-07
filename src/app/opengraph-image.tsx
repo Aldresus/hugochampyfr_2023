@@ -1,5 +1,4 @@
 import { ImageResponse } from "next/og";
-
 // Route segment config
 export const runtime = "edge";
 
@@ -17,7 +16,7 @@ export const contentType = "image/png";
 export default async function Image() {
   // Font
   const interSemiBold = fetch(
-    new URL("./Inter-SemiBold.ttf", import.meta.url),
+    new URL("src/assets/fonts/Geist-SemiBold.otf", import.meta.url),
   ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
@@ -25,16 +24,53 @@ export default async function Image() {
       // ImageResponse JSX element
       <div
         style={{
-          fontSize: 128,
-          background: "white",
+          fontSize: "4.75rem",
+          background: "#ffffff",
+          color: "#020817",
           width: "100%",
           height: "100%",
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        Hugo Champy
+        <span
+          style={{
+            padding: "1rem",
+          }}
+        >
+          Hugo
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#479efa"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            style={{
+              marginBottom: "2rem",
+            }}
+          >
+            <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+            <path d="M5 3v4" />
+            <path d="M19 17v4" />
+            <path d="M3 5h4" />
+            <path d="M17 19h4" />
+          </svg>
+        </span>
+        <span
+          style={{
+            color: "#353945",
+            fontSize: "2.5rem",
+            fontWeight: 400,
+          }}
+        >
+          Full stack developer
+        </span>
       </div>
     ),
     // ImageResponse options

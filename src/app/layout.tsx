@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { GeistSans } from "geist/font";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"] });
+const geist = GeistSans;
 
 export const metadata: Metadata = {
   title: "Hugo Champy",
@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full snap-y snap-mandatory">
-      <body className={cn(inter.className, "h-full")}>{children}</body>
+      <body className={cn(geist.className, "h-full")}>{children}</body>
     </html>
   );
 }
