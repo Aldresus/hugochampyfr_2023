@@ -2,16 +2,24 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { keywords } from "@/data/tags";
 
 const geist = GeistSans;
 
 export const metadata: Metadata = {
-  title: "Hugo Champy",
-  description: "Hugo Champy's personal website",
-  keywords:
-    "Hugo Champy, Hugo, Champy, HugoChampy, Hugo Champy's personal website",
+  title: "Hugo Champy | Full Stack Developer",
+  description: "Hugo Champy: Software Engineer & Creative Technologist.",
+  keywords: keywords,
   twitter: {
     card: "summary_large_image",
+    title: "Hugo Champy | Full Stack Developer",
+    description: "Hugo Champy: Software Engineer & Creative Technologist.",
+    site: "@hugochampy",
+    creator: "@aldresus",
+  },
+  openGraph: {
+    title: "Hugo Champy | Full Stack Developer",
+    type: "website",
   },
 };
 
