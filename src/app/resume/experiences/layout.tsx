@@ -3,13 +3,13 @@ import { keywords, experienceKeywords } from "@/data/tags";
 export const metadata: Metadata = {
   title: "Hugo Champy | Experiences | Full Stack Developer",
   description:
-    "Hugo Champy's Experiences: Software Engineer & Creative Technologist.",
+    "Hugo Champy's Experiences: Student Software Engineer & Creative Technologist.",
   keywords: [...keywords, ...experienceKeywords],
   twitter: {
     card: "summary_large_image",
     title: "Hugo Champy | Experiences | Full Stack Developer",
     description:
-      "Hugo Champy's Experiences: Software Engineer & Creative Technologist.",
+      "Hugo Champy's Experiences: Student Software Engineer & Creative Technologist.",
     site: "@hugochampy",
     creator: "@aldresus",
   },

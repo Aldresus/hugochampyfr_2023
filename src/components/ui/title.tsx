@@ -1,11 +1,9 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
-interface TitleProps {
-  children: ReactNode;
+interface TitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
   size?: "h1" | "h2" | "h3" | "h4" | "h5";
-  className?: string;
 }
 
 const titleVariants = cva(
@@ -26,14 +24,22 @@ const titleVariants = cva(
   },
 );
 
-//todo inspire of shadcn to have the html props
-export default function Title(props: TitleProps) {
-  const { children, size, className } = props;
-  const Title = size ? size : "h1";
+const Title = React.forwardRef<HTMLHeadingElement, TitleProps>(
+  ({ children, size, className, ...props }, ref) => {
+    const Title = size ? size : "h1";
 
-  return (
-    <Title className={cn(titleVariants({ size: size }), className)}>
-      {children}
-    </Title>
-  );
-}
+    return (
+      <Title
+        ref={ref}
+        className={cn(titleVariants({ size: size }), className)}
+        {...props}
+      >
+        {children}
+      </Title>
+    );
+  },
+);
+
+Title.displayName = "Title";
+
+export default Title;

@@ -7,13 +7,15 @@ import { keywords } from "@/data/tags";
 const geist = GeistSans;
 
 export const metadata: Metadata = {
-  title: "Hugo Champy | Full Stack Developer",
-  description: "Hugo Champy: Software Engineer & Creative Technologist.",
+  title: "Hugo Champy | Student | Full Stack Developer",
+  description:
+    "Hugo Champy: Student Software Engineer & Creative Technologist.",
   keywords: keywords,
   twitter: {
     card: "summary_large_image",
-    title: "Hugo Champy | Full Stack Developer",
-    description: "Hugo Champy: Software Engineer & Creative Technologist.",
+    title: "Hugo Champy | Student | Full Stack Developer",
+    description:
+      "Hugo Champy: Student Software Engineer & Creative Technologist.",
     site: "@hugochampy",
     creator: "@aldresus",
   },
