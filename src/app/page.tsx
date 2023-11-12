@@ -62,7 +62,7 @@ export default function Home() {
 
     setSparkSizePercent(sparkSizePercent + 1);
 
-    if (Math.round(titleRotation / 360) % 13 === 0) {
+    if (Math.round(titleRotation / 360) % 3 === 0) {
       setSparkSizePercent(100);
       if (document) {
         console.log("document");
