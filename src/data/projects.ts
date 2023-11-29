@@ -6,9 +6,15 @@ export interface Project {
 
 const projects: Project[] = [
   {
-    name: "ALK",
+    name: "Minecraft ChatGPT plugin",
     description:
       "It is a prototype of a Minecraft plugin that uses OpenAI's ChatGPT API to generate messages in the chat, interacting with players. It can also execute commands and use pre-defined in-game events. The plugin is written in Java and uses the Spigot API.",
+    picturePath: "/projects/minecraftChatGPTPlugin.png",
+  },
+  {
+    name: "ALK",
+    description:
+      "ALK is a Discord bot game that I made to fight against boredom. Its a cooperative game where you have to enter a french word following the alphabet order. The words are verified from a database of 1.4 million french words that I built. The first version was made in Python but I am currently rewriting it in TypeScript.",
     picturePath: "/projects/ALK.png",
   },
   {
@@ -35,6 +41,14 @@ const projects: Project[] = [
       "Such as birthday reminder, weather, role play dices, etc... All written in Python.",
     picturePath: "/projects/BdayBot.png",
   },
+    //todo find a way to have links / tooltips on specific words
+  {
+    name: "DynamicPrositX",
+    description:
+      "A online/desktop tool to help structurate the collective prosit (cf. PrositResolver) kickoff, by giving a form, a presentation mode and a way to export the data. It is written in TypeScript with NextJS and bundled with Tauri.",
+    picturePath: "/projects/dynamicPrositX.png",
+  },
+
 ];
 
 //sort projects by name
