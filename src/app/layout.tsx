@@ -3,6 +3,7 @@ import { GeistSans } from "geist/font";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { keywords } from "@/data/tags";
+import BackgroundSvg from "@/components/backgroundSvg";
 
 const geist = GeistSans;
 
@@ -31,8 +32,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full snap-y snap-mandatory">
-      <body className={cn(geist.className, "h-full")}>{children}</body>
+    <html lang="en" className="h-full snap-y snap-mandatory ">
+      <body className={cn(geist.className, "h-full")}>
+        <div className="absolute top-0 bottom-0 left-0 right-0 overflow-hidden z-10">
+          <BackgroundSvg className="absolute left-0 bottom-0 h-screen" />
+        </div>
+        {children}
+      </body>
     </html>
   );
 }

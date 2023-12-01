@@ -169,7 +169,7 @@ export default function Home() {
               />
             </motion.div>
           </Title>
-          <ContactButtons />
+          <ContactButtons className="z-50" />
         </div>
       </motion.div>
 
