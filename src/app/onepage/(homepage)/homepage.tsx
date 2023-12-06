@@ -1,10 +1,9 @@
 "use client";
-import { ButtonTextBackground } from "@/components/ui/buttonTextBackground";
+
 import ContactButtons from "@/components/ui/contactButtons";
 import Title from "@/components/ui/title";
 import { Variants, motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const parents: Variants = {
@@ -30,11 +29,6 @@ const experienceVariants: Variants = {
 	enter: { opacity: 1, x: 0, y: 0 },
 };
 
-const projectsVariants: Variants = {
-	hidden: { opacity: 0, x: 100 },
-	enter: { opacity: 1, x: 0, y: 0 },
-};
-
 const colorChangeTransitionVariants = {
 	initial: {
 		top: "100%",
@@ -52,7 +46,7 @@ const colorChangeTransitionVariants = {
 	},
 };
 
-export default function Home() {
+export default function OnePageHome() {
 	const [titleRotation, setTitleRotation] = useState(0);
 	const [sparkSizePercent, setSparkSizePercent] = useState(100);
 	const [colorTransition, setColorTransition] = useState(false);
@@ -128,7 +122,7 @@ export default function Home() {
 
 	return (
 		<motion.main
-			className="flex  h-full overflow-hidden flex-col items-center justify-between p-3 lg:p-24"
+			className="w-full min-h-full flex flex-col items-start justify-between p-3 lg:p-12"
 			variants={parents}
 			initial="hidden"
 			animate="enter"
@@ -146,70 +140,103 @@ export default function Home() {
 				}}
 				className="flex h-1/3 lg:h-1/2"
 			>
-				<div className="flex flex-col justify-center gap-2">
-					<Title size="h1" className="justify-center">
+				<div className="flex flex-col justify-start items-start gap-2">
+					<Title size="main" className="justify-center">
 						<motion.div
 							animate={{
 								rotate: titleRotation,
 								transition: { ease: "easeInOut", bounce: 0.5, duration: 0.5 },
 							}}
 						>
-							Hugo
-						</motion.div>
-						<motion.div
-							animate={{
-								scale: sparkSizePercent / 100,
-								transition: { duration: 1 },
-							}}
-						>
-							<Sparkles
-								onClick={() => setTitleRotation(titleRotation + 360)}
-								className="text-accent-foreground cursor-pointer"
-								size="30"
-							/>
+							<div>Hi,</div>
+							<div className="flex">
+								{" "}
+								I&apos;m Hugo
+								<motion.div
+									animate={{
+										scale: sparkSizePercent / 100,
+										transition: { duration: 1 },
+									}}
+									className="text-accent-foreground cursor-pointer"
+								>
+									<Sparkles
+										onClick={() => setTitleRotation(titleRotation + 360)}
+										className="hidden 2xl:block"
+										size="7.5rem"
+									/>
+									<Sparkles
+										onClick={() => setTitleRotation(titleRotation + 360)}
+										className="hidden lg:block 2xl:hidden"
+										size="5.5rem"
+									/>
+									<Sparkles
+										onClick={() => setTitleRotation(titleRotation + 360)}
+										className="hidden md:block lg:hidden"
+										size="4.5rem"
+									/>
+									<Sparkles
+										onClick={() => setTitleRotation(titleRotation + 360)}
+										className="hidden sm:block md:hidden"
+										size="3.5rem"
+									/>
+									<Sparkles
+										onClick={() => setTitleRotation(titleRotation + 360)}
+										className="text-accent-foreground cursor-pointer  sm:hidden"
+										size="2.5rem"
+									/>
+								</motion.div>
+							</div>
 						</motion.div>
 					</Title>
-					<ContactButtons />
 				</div>
 			</motion.div>
-
-			<div className="flex h-2/3 lg:h-1/2 gap-3 lg:gap-9 w-full flex-col lg:flex-row">
-				<Link href={"/resume/skills"} className="flex flex-1">
-					<motion.div className="w-full flex" variants={skillsVariant}>
-						<ButtonTextBackground
-							className="shadow overflow-hidden"
-							size="fill"
-							rounded="3xl"
-						>
-							Skills
-						</ButtonTextBackground>
-					</motion.div>
-				</Link>
-
-				<Link href={"/resume/experiences"} className="flex flex-1">
-					<motion.div className="w-full flex" variants={experienceVariants}>
-						<ButtonTextBackground
-							className="shadow overflow-hidden"
-							size="fill"
-							rounded="3xl"
-						>
-							Experiences
-						</ButtonTextBackground>
-					</motion.div>
-				</Link>
-
-				<Link href={"/resume/projects"} className="flex flex-1">
-					<motion.div className="w-full flex" variants={projectsVariants}>
-						<ButtonTextBackground
-							className="shadow overflow-hidden"
-							size="fill"
-							rounded="3xl"
-						>
-							Projects
-						</ButtonTextBackground>
-					</motion.div>
-				</Link>
+			<div className="flex w-full h-2/3 lg:h-1/2 items-end justify-between">
+				<motion.div variants={skillsVariant}>
+					<Title size="h1">Full stack developer,</Title>
+					<Title size="h1">Student</Title>
+				</motion.div>
+				<motion.div className="flex items-end" variants={experienceVariants}>
+					<ContactButtons />
+				</motion.div>
 			</div>
+
+			{/*<div className="flex h-2/3 lg:h-1/2 gap-3 lg:gap-9 w-full flex-col lg:flex-row">*/}
+			{/*  <Link href={"/resume/skills"} className="flex flex-1">*/}
+			{/*    <motion.div className="w-full flex" variants={skillsVariant}>*/}
+			{/*      <ButtonTextBackground*/}
+			{/*        className="shadow overflow-hidden"*/}
+			{/*        size="fill"*/}
+			{/*        rounded="3xl"*/}
+			{/*      >*/}
+			{/*        Skills*/}
+			{/*      </ButtonTextBackground>*/}
+			{/*    </motion.div>*/}
+			{/*  </Link>*/}
+
+			{/*  <Link href={"/resume/experiences"} className="flex flex-1">*/}
+			{/*    <motion.div className="w-full flex" variants={experienceVariants}>*/}
+			{/*      <ButtonTextBackground*/}
+			{/*        className="shadow overflow-hidden"*/}
+			{/*        size="fill"*/}
+			{/*        rounded="3xl"*/}
+			{/*      >*/}
+			{/*        Experiences*/}
+			{/*      </ButtonTextBackground>*/}
+			{/*    </motion.div>*/}
+			{/*  </Link>*/}
+
+			{/*  <Link href={"/resume/projects"} className="flex flex-1">*/}
+			{/*    <motion.div className="w-full flex" variants={projectsVariants}>*/}
+			{/*      <ButtonTextBackground*/}
+			{/*        className="shadow overflow-hidden"*/}
+			{/*        size="fill"*/}
+			{/*        rounded="3xl"*/}
+			{/*      >*/}
+			{/*        Projects*/}
+			{/*      </ButtonTextBackground>*/}
+			{/*    </motion.div>*/}
+			{/*  </Link>*/}
+			{/*</div>*/}
 		</motion.main>
 	);
 }

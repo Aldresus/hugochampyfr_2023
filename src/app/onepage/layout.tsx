@@ -2,7 +2,7 @@ import { keywords } from "@/data/tags";
 import { cn } from "@/lib/utils";
 import { GeistSans } from "geist/font";
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
 
 const geist = GeistSans;
 
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 	},
 };
 
-export default function RootLayout({
+export default function OnePageLayout({
 	children,
 }: {
 	children: React.ReactNode;

@@ -1,1 +1,2 @@
-export default interface IconProps extends React.HTMLAttributes<SVGElement> {}
+type IconProps = React.HTMLAttributes<SVGElement>;
+export default IconProps;
