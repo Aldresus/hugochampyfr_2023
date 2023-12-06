@@ -1,10 +1,14 @@
 import { keywords } from "@/data/tags";
 import { cn } from "@/lib/utils";
-import { GeistSans } from "geist/font";
+import { Inter } from "@next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
 
-const geist = GeistSans;
+const inter = Inter({
+	subsets: ["latin", "latin-ext"],
+	style: "normal",
+	weight: ["400", "700", "500"],
+});
 
 export const metadata: Metadata = {
 	title: "Hugo Champy | Student | Full Stack Developer",
@@ -32,7 +36,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" className="h-full snap-y snap-mandatory">
-			<body className={cn(geist.className, "h-full")}>{children}</body>
+			<body className={cn(inter.className, "h-full")}>{children}</body>
 		</html>
 	);
 }

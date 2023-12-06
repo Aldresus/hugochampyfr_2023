@@ -1,13 +1,13 @@
 import { cn } from "@/lib/utils";
-import { cva } from "class-variance-authority";
+import { VariantProps, cva } from "class-variance-authority";
 import React from "react";
 
-interface TitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
-	size?: "h1" | "h2" | "h3" | "h4" | "h5" | "main";
-}
+interface TitleProps
+	extends React.HTMLAttributes<HTMLHeadingElement>,
+		VariantProps<typeof titleVariants> {}
 
 const titleVariants = cva(
-	"text-4xl flex content-center flex-wrap font-bold text-foreground",
+	"text-4xl flex content-center flex-wrap text-foreground",
 	{
 		variants: {
 			size: {
@@ -18,25 +18,33 @@ const titleVariants = cva(
 				h4: "text-lg 2xl:text-xl",
 				h5: "text-md 2xl:text-lg",
 			},
+			weight: {
+				default: "font-bold",
+				thin: "font-thin",
+				normal: "font-normal",
+				medium: "font-medium",
+				semibold: "font-semibold",
+				bold: "font-bold",
+			},
 		},
 		defaultVariants: {
 			size: "h1",
+			weight: "default",
 		},
 	},
 );
 
 const Title = React.forwardRef<HTMLHeadingElement, TitleProps>(
-	({ children, size = "h1", className, ...props }, ref) => {
-		const Title = size !== "main" ? size : "h1";
+	({ children, size = "h1", weight = "default", className, ...props }, ref) => {
 
 		return (
-			<Title
+			<div
 				ref={ref}
-				className={cn(titleVariants({ size: size }), className)}
+				className={cn(titleVariants({ size, weight }), className)}
 				{...props}
 			>
 				{children}
-			</Title>
+			</div>
 		);
 	},
 );

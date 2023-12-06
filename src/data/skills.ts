@@ -29,109 +29,14 @@ const skills: Skill[] = [
 		icon: "devicon-sql",
 	},
 	{
-		name: "C/C++/C#",
+		name: "C / C++ / C#",
 		type: "technologies",
 		icon: "devicon-c",
-	},
-	{
-		name: "Networking basics",
-		type: "technologies",
-		icon: "devicon-putty",
 	},
 	{
 		name: "Git",
 		type: "technologies",
 		icon: "devicon-git",
-	},
-	{
-		name: "Visual Studio Community & Code",
-		type: "softwares",
-		icon: "devicon-vs",
-	},
-	{
-		name: "JetBrains IDEs",
-		type: "softwares",
-		icon: "devicon-jetbrains",
-	},
-	{
-		name: "GitHub / GitLab",
-		type: "softwares",
-		icon: "devicon-github",
-	},
-	{
-		name: "Microsoft Office",
-		type: "softwares",
-		icon: "devicon-office",
-	},
-	{
-		name: "Adobe CC Suite",
-		type: "softwares",
-		icon: "devicon-photoshop",
-	},
-	{
-		name: "Jira",
-		type: "softwares",
-		icon: "devicon-jira",
-	},
-	{
-		name: "Windows, Linux, MacOS",
-		type: "softwares",
-		icon: "devicon-linux",
-	},
-	{
-		name: "English",
-		type: "languages",
-		icon: "devicon-english",
-	},
-	{
-		name: "French",
-		type: "languages",
-		icon: "devicon-french",
-	},
-	{
-		name: "Autonomy",
-		type: "soft skills",
-		icon: "devicon-autonomy",
-	},
-	{
-		name: "Project Management",
-		type: "soft skills",
-		icon: "devicon-project",
-	},
-	{
-		name: "Teamwork",
-		type: "soft skills",
-		icon: "devicon-teamwork",
-	},
-	{
-		name: "Flexibility",
-		type: "soft skills",
-		icon: "devicon-flexibility",
-	},
-	{
-		name: "Adaptability",
-		type: "soft skills",
-		icon: "devicon-adaptability",
-	},
-	{
-		name: "Problem solving",
-		type: "soft skills",
-		icon: "devicon-problem",
-	},
-	{
-		name: "Communication",
-		type: "soft skills",
-		icon: "devicon-communication",
-	},
-	{
-		name: "Curiosity",
-		type: "soft skills",
-		icon: "devicon-curiosity",
-	},
-	{
-		name: "Figma",
-		type: "softwares",
-		icon: "devicon-figma",
 	},
 	{
 		name: "Nextjs",
@@ -162,13 +67,13 @@ const skills: Skill[] = [
 
 export function groupSkillsByType(skills: Skill[]) {
 	const groupedSkills: { [key: string]: Skill[] } = {};
-	skills.forEach((skill) => {
+	for (const skill of skills) {
 		if (groupedSkills[skill.type]) {
 			groupedSkills[skill.type].push(skill);
 		} else {
 			groupedSkills[skill.type] = [skill];
 		}
-	});
+	}
 	return groupedSkills;
 }
 
