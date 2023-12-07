@@ -2,7 +2,7 @@ import Title from "@/components/ui/title";
 import Image from "next/image";
 export default function OnePageProjetsKetchupWithFriends() {
 	return (
-		<div className="min-h-screen w-full p-3 lg:p-12 flex flex-col gap-9 bg-accent snap-center">
+		<div className="min-h-screen w-full p-3 lg:p-24 flex flex-col gap-9 bg-secondary snap-center">
 			<div className="relative h-full w-full flex-1">
 				<Image
 					src={"/projects/ketchup.png"}

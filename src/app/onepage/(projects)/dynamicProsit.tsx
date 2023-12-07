@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 export default function OnePageProjetsDynamicPrositX() {
 	return (
-		<div className="min-h-screen w-full p-3 lg:p-12 flex flex-col gap-9 snap-center bg-accent">
+		<div className="min-h-screen w-full p-3 lg:p-24 flex flex-col gap-9 snap-center bg-accent">
 			<div className="relative h-full w-full flex-1">
 				<Link
 					href={"https://prosit.hugochampy.fr"}
