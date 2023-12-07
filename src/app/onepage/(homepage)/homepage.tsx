@@ -122,7 +122,7 @@ export default function OnePageHome() {
 
 	return (
 		<motion.main
-			className="w-full min-h-full flex flex-col items-start justify-between p-3 lg:p-12"
+			className="w-full min-h-full flex flex-col items-start justify-between p-3 lg:p-12 bg-primary"
 			variants={parents}
 			initial="hidden"
 			animate="enter"
@@ -141,7 +141,7 @@ export default function OnePageHome() {
 				className="flex h-1/3 lg:h-1/2"
 			>
 				<div className="flex flex-col justify-start items-start gap-2">
-					<Title size="main" className="justify-center">
+					<Title size="main" className="justify-center text-primary-foreground">
 						<motion.div
 							animate={{
 								rotate: titleRotation,
@@ -192,8 +192,12 @@ export default function OnePageHome() {
 			</motion.div>
 			<div className="flex w-full h-2/3 lg:h-1/2 items-end justify-between">
 				<motion.div variants={skillsVariant}>
-					<Title size="h1">Full stack developer,</Title>
-					<Title size="h1">Student</Title>
+					<Title size="h1" className="text-primary-foreground">
+						Full stack developer,
+					</Title>
+					<Title size="h1" className="text-primary-foreground">
+						Student
+					</Title>
 				</motion.div>
 				<motion.div className="flex items-end" variants={experienceVariants}>
 					<ContactButtons />

@@ -36,7 +36,6 @@ const titleVariants = cva(
 
 const Title = React.forwardRef<HTMLHeadingElement, TitleProps>(
 	({ children, size = "h1", weight = "default", className, ...props }, ref) => {
-
 		return (
 			<div
 				ref={ref}
