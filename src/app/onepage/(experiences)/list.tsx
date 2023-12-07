@@ -3,7 +3,7 @@ import companiesExperiences from "@/data/companies";
 
 export default function OnePageExperiencesList() {
 	return (
-		<div className="min-h-screen w-full p-3 lg:p-12  flex">
+		<div className="min-h-screen w-full p-3 lg:p-12 flex bg-accent snap-center">
 			<div className="w-2/3">
 				<Title size="main" className="text-secondary-foreground">
 					Those
@@ -16,7 +16,7 @@ export default function OnePageExperiencesList() {
 					companies did
 				</Title>
 			</div>
-			<div className="w-1/3 flex flex-col justify-center items-start gap-5">
+			<div className="w-1/3 flex flex-col justify-center items-start gap-12">
 				{companiesExperiences.map((experience) => (
 					<div className="flex flex-col" key={experience.place}>
 						<Title

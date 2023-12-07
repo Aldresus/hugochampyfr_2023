@@ -122,7 +122,7 @@ export default function OnePageHome() {
 
 	return (
 		<motion.main
-			className="w-full min-h-full flex flex-col items-start justify-between p-3 lg:p-12 bg-primary"
+			className="w-full min-h-full flex flex-col items-start justify-between p-3 lg:p-12 snap-center bg-primary"
 			variants={parents}
 			initial="hidden"
 			animate="enter"

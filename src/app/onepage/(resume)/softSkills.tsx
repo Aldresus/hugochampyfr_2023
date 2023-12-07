@@ -3,7 +3,7 @@ import softSkills from "@/data/softSkills";
 
 export default function OnePageSoftSkills() {
 	return (
-		<div className="min-h-screen w-full p-3 lg:p-12  flex">
+		<div className="min-h-screen w-full p-3 lg:p-12 flex snap-center bg-secondary">
 			<div className="w-2/3">
 				<Title size="main" className="text-secondary-foreground">
 					I also{" "}

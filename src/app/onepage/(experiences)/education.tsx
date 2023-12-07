@@ -1,37 +1,41 @@
 import Title from "@/components/ui/title";
-import companiesExperiences from "@/data/companies";
+import educations from "@/data/educations";
 
 export default function OnePageExperiencesEducation() {
 	return (
-		<div className="min-h-screen w-full p-3 lg:p-12  flex">
+		<div className="min-h-screen w-full p-3 lg:p-12 flex snap-center bg-accent">
 			<div className="w-2/3">
 				<Title size="main" className="text-secondary-foreground">
-					Those
+					I learn
 				</Title>
 				<Title
 					size="h1"
 					weight="medium"
-					className="pl-14 text-secondary-foreground"
+					className="pl-3 text-secondary-foreground"
 				>
-					companies did
+					from the bests
 				</Title>
 			</div>
-			<div className="w-1/3 flex flex-col justify-center items-start gap-5">
-				{companiesExperiences.map((experience) => (
-					<div className="flex flex-col" key={experience.place}>
+			<div className="w-1/3 flex flex-col justify-center items-start gap-12">
+				{educations.map((education) => (
+					<div className="flex flex-col" key={education.place}>
 						<Title
-							size="h2"
+							size="h3"
 							weight="medium"
 							className="text-muted-foreground mb-[-0.3rem]"
 						>
-							{experience.date}
+							{education.date}
+						</Title>
+
+						<Title size="h1" weight="medium" className=" ">
+							{education.name}
 						</Title>
 						<Title
-							size="h1"
-							weight="medium"
-							className="text-secondary-foreground"
+							size="h3"
+							weight="thin"
+							className="text-secondary-foreground mb-[-0.3rem] font-normal"
 						>
-							{experience.place}
+							{education.place}
 						</Title>
 					</div>
 				))}

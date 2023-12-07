@@ -3,7 +3,7 @@ import skills from "@/data/skills";
 
 export default function OnePageSkills() {
 	return (
-		<div className="min-h-screen w-full p-3 lg:p-12  flex">
+		<div className="min-h-screen w-full p-3 lg:p-12 flex snap-center bg-accent">
 			<div className="w-2/3">
 				<Title size="main" className="text-secondary-foreground">
 					I know
